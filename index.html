@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Passat Freunde West</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --silver: #c0c0c0;
+      --dark: #1a1a1a;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { 
+  background: url(background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+header {
+  background: linear-gradient(to right, rgba(204, 204, 204, 0.7), rgba(153, 153, 153, 0.7));
+  color: #000;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+    header h1 {
+      font-size: 2.8em;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      text-align: center;
+      background: #000;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: var(--silver);
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    section h2 {
+      border-bottom: 2px solid var(--silver);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: var(--silver);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #999;
+      border-top: 1px solid #444;
+    }
+
+    .passat-image {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px rgba(255,255,255,0.05);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #80cfff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+#image-container {
+  flex: 1 1 300px; 
+  max-width: 500px;
+}
+
+.passat-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.passat-image:hover {
+  transform: scale(1.03);
+}
+
+#award {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#award h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+#award-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 10px;
+}
+
+#award-image-container {
+  width: 100%;
+  max-width: 160px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+#award-image-container:hover {
+  transform: scale(1.05);
+}
+
+.passat-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+#scrollTopBtn img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+#scrollTopBtn:hover img {
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+
+footer{
+  background: linear-gradient(to right, rgba(204, 204, 204, 0.7), rgba(153, 153, 153, 0.7));
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+  </style>
+</head>
+<body>
+
+<button id="scrollTopBtn">
+  <img src="top.png" alt="Scroll to Top" />
+</button>
+
+<header>
+  <h1>PASSAT FREUNDE WEST</h1>
+</header>
+
+<nav>
+  <a href="#about">Über Uns</a>
+  <a href="#community">Community</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="about">
+  <h2>Über Uns</h2>
+  <p>
+    Willkommen bei den Passat Freunden West! Wir teilen die Leidenschaft für alle Generationen des VW Passat – vom legendären B1 bis zum Hightech-B8. Unsere Community verbindet Oldtimer-Fans, Tuning-Begeisterte und Liebhaber gepflegter Serienfahrzeuge.
+  </p>
+  <img src="banner.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+</section>
+
+<section id="community">
+  <h2>Community</h2>
+  <p>
+    Du möchtest dich austauschen, restaurieren, schrauben oder einfach nur mit Gleichgesinnten cruisen? Dann schau in unsere empfohlenen Foren:
+  </p>
+  <ul>
+    <li><a href="https://www.passatworld.com/" target="_blank">Passatworld Forum</a></li>
+    <li><a href="https://www.passat-kartei.de/forum/" target="_blank">Passat-Kartei Deutschland</a></li>
+    <li><a href="https://www.meinpassat.de/" target="_blank">meinPassat.de</a></li>
+    <li><a href="https://www.facebook.com/groups/113687825326742/" target="_blank">VW Passat Owners Club</a></li>
+  </ul>
+  <div id="gallery">
+    <div id="image-container">
+        <img src="a.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="image-container">
+        <img src="b.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+
+    <div id="image-container">
+        <img src="d.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="image-container">
+        <img src="e.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+  </div>
+</section>
+
+<section id="award">
+  <h2>Auszeichnungen</h2>
+<div id="award-gallery">
+  <!--
+    <div id="award-image-container">
+        <img src="a1.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="award-image-container">
+        <img src="a2.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+-->
+<!--
+    <div id="award-image-container">
+        <img src="a3.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="award-image-container">
+        <img src="a4.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+-->
+    <div id="award-image-container">
+        <img src="a6.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="award-image-container">
+        <img src="a7.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+
+    <div id="award-image-container">
+        <img src="a5.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+    <div id="award-image-container">
+        <img src="a8.png" alt="VW Passat Evolution" class="passat-image" style="border-radius:15px;">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontakt</h2>
+  <p>
+    Schreib uns eine Mail mit dem Betreff <strong>"Passat Freunde West"</strong> an:<br>
+    <a href="mailto:info@passatfreunde.de">info@passatfreunde.de</a>
+  </p>
+</section>
+
+<footer>
+        &copy; 2025 Passat Freunde West · Designed with ❤️ M.Dziersan
+</footer>
+ <script>
+    // CSS als <style>-Block dynamisch erzeugen
+    const style = document.createElement('style');
+    style.textContent = `
+      .js-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      .js-overlay span {
+        font-size: 64px;
+        color: white;
+        font-weight: bold;
+        opacity: 0.5;
+        user-select: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Overlay-DIV mit Inhalt erzeugen
+    const overlay = document.createElement('div');
+    overlay.className = 'js-overlay';
+
+    const text = document.createElement('span');
+    text.textContent = 'TEMPLATE';
+
+    overlay.appendChild(text);
+    document.body.appendChild(overlay);
+  </script>
+
+
+    <script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+</body>
+</html>
